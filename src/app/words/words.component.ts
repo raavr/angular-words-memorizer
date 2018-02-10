@@ -1,6 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { Word } from './word/word';
 import { Router, ActivatedRoute } from '@angular/router';
+import { WordsService } from './words.service';
 
 @Component({
     selector: 'words',
@@ -12,8 +13,12 @@ export class WordsComponent {
     currentWord: Word;
     currentIdx = 0;
 
-    constructor(private router: Router, private route: ActivatedRoute) {
+    constructor(private router: Router, private route: ActivatedRoute, private wordsService: WordsService) {
 
+    }
+
+    private updateCurrentWord() {
+        this.currentWord = this.words[this.currentIdx];
     }
 
     @HostListener('document:keydown.ArrowRight', ['$event'])
@@ -22,7 +27,7 @@ export class WordsComponent {
         if(this.currentIdx >= this.words.length - 1) {
             this.currentIdx = this.words.length - 1;
         }
-        this.currentWord = this.words[this.currentIdx];
+        this.updateCurrentWord();
     }
 
     @HostListener('document:keydown.ArrowLeft', ['$event'])
@@ -31,7 +36,24 @@ export class WordsComponent {
         if(this.currentIdx < 0) {
             this.currentIdx = 0;
         }
-        this.currentWord = this.words[this.currentIdx];
+        this.updateCurrentWord();
+    }
+
+    ignoreWord(word: Word) {
+        const confirmed = window.confirm('Do you really want to ignore this word?');
+
+        if(confirmed) {
+            this.wordsService.ignoreWord(word.id).subscribe(() => {
+                const idx = this.words.indexOf(word);
+                if(idx !== -1) {
+                    this.words.splice(idx, 1);
+                    if(this.currentIdx === this.words.length) {
+                        this.currentIdx--;
+                    }
+                    this.updateCurrentWord();
+                }
+            });
+        }
     }
 
     ngOnInit() {

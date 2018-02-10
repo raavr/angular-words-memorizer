@@ -1,7 +1,8 @@
-<div class="nav nav--left" (click)="moveLeft()">
+<div *ngIf="currentWord" class="nav nav--left" (click)="moveLeft()">
     <i class="fa fa-angle-left" aria-hidden="true"></i>
 </div>
-<word-item [word]="currentWord"></word-item>
-<div class="nav nav--right" (click)="moveRight()">
+<word-item *ngIf="currentWord" [word]="currentWord" (ignore)="ignoreWord($event)"></word-item>
+<div *ngIf="!currentWord" class="no-words">Sorry, list of words is empty!</div>
+<div *ngIf="currentWord" class="nav nav--right" (click)="moveRight()">
     <i class="fa fa-angle-right" aria-hidden="true"></i>
 </div>

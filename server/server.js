@@ -22,11 +22,19 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-const queryGetWords = 'select w.id, w.en, w.trns from words w';
+const queryGetWords = 'select w.id, w.en, w.trns from words w where w.ignore = 0';
 app.get('/api/words', function(req, res) {
     connection.query(queryGetWords, function (err, rows, fields) {
         if (err) throw err;
         res.send({words: rows});
+    });
+});
+
+const queryIgnoreUpdateWord = 'update words w set w.ignore = 1 where w.id = ?'
+app.put('/api/word/', function(req, res) {
+    connection.query(queryIgnoreUpdateWord, [req.body.wordId], function (err, rows, fields) {
+        if (err) throw err;
+        res.sendStatus(200);
     });
 });
 

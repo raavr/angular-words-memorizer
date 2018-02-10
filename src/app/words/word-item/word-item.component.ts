@@ -1,5 +1,6 @@
-import { Component, Input, HostListener } from '@angular/core';
+import { Component, Input, HostListener, Output, EventEmitter } from '@angular/core';
 import { Word } from '../word/word';
+import { WordsService } from 'app/words/words.service';
 
 @Component({
     selector: 'word-item',
@@ -8,11 +9,17 @@ import { Word } from '../word/word';
 })
 export class WordItemComponent {
     @Input() word: Word;
+    @Output() ignore = new EventEmitter<Word>();
     isAnsVisible: Boolean = false;
 
     @HostListener('document:keydown.space', ['$event'])
     toggleAns() {
         this.isAnsVisible = !this.isAnsVisible;
+    }
+
+    @HostListener('document:keydown.i', ['$event'])
+    ignoreWord() {
+        this.ignore.emit(this.word);
     }
 
     ngOnChanges(changes) {

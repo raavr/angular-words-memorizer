@@ -6,6 +6,9 @@
         <i *ngIf="!isAnsVisible" class="fa fa-eye"></i>
         <i *ngIf="isAnsVisible" class="fa fa-eye-slash"></i>
     </div>
+    <div class="action-btn action-btn__ignore" (click)="ignoreWord()">
+        <i class="fa fa-info"></i>
+    </div>
 </div>
 <div *ngIf="isAnsVisible" class="word__original">
     {{word.en}}

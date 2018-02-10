@@ -14,4 +14,10 @@ export class WordsService {
             response => response.json().words as Array<Word>
         );
     }
+
+    ignoreWord(wordId): Observable<number> {
+        return this.http.put(ENDPOINT + '/api/word/', { wordId : wordId }).map(
+            response => response.status
+        );
+    }
 }
