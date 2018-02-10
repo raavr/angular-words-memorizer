@@ -1,0 +1,17 @@
+$fa-font-path: "/assets/font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+@import "~normalize.css/normalize.css";
+
+html, body {
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  height: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: #f5f5f5;
+}
