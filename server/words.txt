@@ -8,3 +8,100 @@ forgery:fałszerstwo
 persistence:wytrwałość, uporczywość
 customary:zwyczajny, powszechny, normalny
 acknowledge:uznać, przyznawać, potwierdzić
+tenacious:nieustępliwy, wytrwały
+amiable:miły, przyjemny
+redundant:zbędny
+utility:użyteczność
+emphatic:dobitny
+conduct:prowadzić, przeprowadzać
+forensic:sądowy, prawniczy
+idle:1.bezczynny, leniwy
+insight:wgląd
+unanimous:jednogłośny
+presume:przypuszczać
+concession:ustępstwo
+aptly:stosownie, odpowiednio, trafnie
+taunt:szydzić
+threshold:próg
+rant:1.narzekać, marudzić 2. ściekać się
+crucial:krytyczny, decydujący
+hostile:wrogi, nieprzyjazny
+suspension:zawieszenie
+slender:1.smukły, szczupły 2.skromny
+scatter:1.rozrzucać, rozsypywać
+minority:mniejszość
+stable:1.stabilny 2.stajnia
+rarefied:rozrzedzony
+perseverance:samozaparcie, wytrwałość
+seek:poszukiwać
+newcomer:nowoprzybyły
+tentative:1.niepewny 2.wstępny
+estate:nieruchomość
+merely:tylko, jedynie
+range:skala, zakres
+acknowledge:uznać, przyznawać, potwierdzić
+kernel:jądro, sedno
+brace:1.przygotowywać się na coś 2.wzmocnić
+bash:walić
+perimeter:obwód, granice
+recoup:odzyskiwać
+perpendicular:prostopadły
+surmise:domyślać się
+trim:ucinać, przycinać
+endurance:wytrzymałość
+apprehension:1.obawa 2.aresztowanie 3.zrozumienie
+suppress:ograniczyć, zakazać
+forfeit:stracić, zaprzepaścić
+exonerate:uniewinniać
+exasperate:irytować
+currency:waluta
+reside:zamieszkiwać, mieszkać
+frown:marszczyć brwi
+amuse:bawić, śmieszyć
+tricky:trudny, skomplikowany
+obscure:1.niejasny, nieokreślony
+grudge:uraza, niechęć
+glisten:błyszczeć
+vague:niejasny, nieokreślony
+crumble:rozpadać się, kruszyć
+track:1.ścieżka, śledzić
+raw:surowy, nieugotowany
+inception:powstanie
+embed:osadzać, zakorzeniać
+swift:błyskawiczny
+clad:ubrany
+comprehensive:pełny, wyczerpujący
+sleight:zręczność
+slack:luźny
+exponential:gwałtowny, wykładniczy
+malicious:złośliwy
+sole:jedyny
+wage:zarobki
+prolong:przedłużyć
+reconciliation:pojednanie
+emphasize:podkreślać
+startle:zaskakiwać
+due to:z powodu, dzięki czemuś
+concede:1.przyznawać się 2.przyznać, 3.oddawać
+burden:ciężar
+behold:spostrzec, ujrzeć
+encounter:spotkanie
+humble:skromny, pokorny
+entity:jednostka
+contest:konkurs, rywalizacja
+strain:obciążenie, stres
+howler:gruby błąd, fatalna pomyłka
+summon:przywoływać
+attachment:zamocowanie
+resume:wznowić, podsumować
+inherent:wrodzony, naturalny
+broach:przywołać
+concussion:wstrząśnienie mózgu
+straightforward:prostolinijny
+studiously:pilnie, starannie
+interception:przechwycenie
+moreover:ponadto, co więcej
+workshop:warsztat
+ransom:okup
+flaw:wada, skaza
+enhance:zwiększać, wzmacniać
