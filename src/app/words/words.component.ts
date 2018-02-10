@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Word } from './word/word';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -16,6 +16,7 @@ export class WordsComponent {
 
     }
 
+    @HostListener('document:keydown.ArrowRight', ['$event'])
     moveRight() {
         this.currentIdx++;
         if(this.currentIdx >= this.words.length - 1) {
@@ -24,6 +25,7 @@ export class WordsComponent {
         this.currentWord = this.words[this.currentIdx];
     }
 
+    @HostListener('document:keydown.ArrowLeft', ['$event'])
     moveLeft() {
         this.currentIdx--;
         if(this.currentIdx < 0) {
