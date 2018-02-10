@@ -1,0 +1,27 @@
+:host {
+    margin: 0 50px;
+}
+
+.word {
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 13px 50px;
+    border-bottom: 1px solid #E6E6E6;
+    width: 400px;
+
+    &__translation {
+        font-weight: 700px;
+        text-align: center;
+        
+    }
+    
+    &__original {
+        font-size: 2rem;
+        padding: 13px 10px;
+        text-align: center;
+        word-break: normal;
+    }
+}

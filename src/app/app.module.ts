@@ -10,6 +10,9 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { NoContentComponent } from './no-content';
 
+import { WordsModule } from './words';
+
+
 const APP_SERVICE_PROVIDERS = [
 
 ];
@@ -29,6 +32,7 @@ const APP_PROVIDERS = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    WordsModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
   providers: [

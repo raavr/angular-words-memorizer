@@ -1,0 +1,17 @@
+:host {
+    display: flex;
+}
+
+.nav {
+    padding: 50px;
+    font-size: 6.8rem;
+    cursor: pointer;
+
+    &--right {
+        margin-left: 50px;
+    }
+
+    &--left {
+        margin-right: 50px;
+    }
+}
