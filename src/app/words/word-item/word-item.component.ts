@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostListener } from '@angular/core';
 import { Word } from '../word/word';
 
 @Component({
@@ -8,4 +8,14 @@ import { Word } from '../word/word';
 })
 export class WordItemComponent {
     @Input() word: Word;
+    isAnsVisible: Boolean = false;
+
+    @HostListener('document:keydown.space', ['$event'])
+    toggleAns() {
+        this.isAnsVisible = !this.isAnsVisible;
+    }
+
+    ngOnChanges(changes) {
+        this.isAnsVisible = false;
+    }
 }
