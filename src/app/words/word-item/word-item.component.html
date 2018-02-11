@@ -2,13 +2,13 @@
     <div class="word__translation">
         {{word.trns}}
     </div>
-    <div class="action-btn action-btn__show-ans" (click)="toggleAns()">
-        <i *ngIf="!isAnsVisible" class="fa fa-eye"></i>
-        <i *ngIf="isAnsVisible" class="fa fa-eye-slash"></i>
-    </div>
-    <div class="action-btn action-btn__ignore" (click)="ignoreWord()">
+    <button class="action-btn action-btn__show-ans" type="button" (click)="toggleAns()">
+        <i *ngIf="isAnsVisible" class="fa fa-eye"></i>
+        <i *ngIf="!isAnsVisible" class="fa fa-eye-slash"></i>
+    </button>
+    <button class="action-btn action-btn__ignore" type="button" (click)="ignoreWord()">
         <i class="fa fa-info"></i>
-    </div>
+    </button>
 </div>
 <div *ngIf="isAnsVisible" class="word__original">
     {{word.en}}
