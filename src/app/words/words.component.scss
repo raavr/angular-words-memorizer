@@ -1,18 +1,21 @@
 :host {
-    display: flex;
+    position: relative;
 }
 
 .nav {
     padding: 50px;
     font-size: 6.8rem;
     cursor: pointer;
+    position: absolute;
+    top: 0;
+    width: 125px;
 
     &--right {
-        margin-left: 50px;
+        right: -175px;
     }
 
     &--left {
-        margin-right: 50px;
+        left: -175px;
     }
 }
 

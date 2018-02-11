@@ -2,6 +2,10 @@ $fa-font-path: "/assets/font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome";
 @import "~normalize.css/normalize.css";
 
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
 html, body {
   font-family: 'Lato', Arial, Helvetica, sans-serif;
   height: 100%;

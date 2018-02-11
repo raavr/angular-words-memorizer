@@ -9,8 +9,9 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class WordsResolver implements Resolve<any> {
   constructor(private wordsService: WordsService, private router: Router) {}
-  
+
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Word[]> {
-    return this.wordsService.getWords();
+    const startPoint = route.paramMap.get('startPoint') || 0;
+    return this.wordsService.getWords(+startPoint);
   }
 }

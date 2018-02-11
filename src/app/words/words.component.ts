@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { Word } from './word/word';
+import { WordsApi } from './word/words-api';
 import { Router, ActivatedRoute } from '@angular/router';
 import { WordsService } from './words.service';
 
@@ -12,6 +13,7 @@ export class WordsComponent {
     words: Word[];
     currentWord: Word;
     currentIdx = 0;
+    pageNumber = 0;
 
     constructor(private router: Router, private route: ActivatedRoute, private wordsService: WordsService) {
 
@@ -22,21 +24,20 @@ export class WordsComponent {
     }
 
     @HostListener('document:keydown.ArrowRight', ['$event'])
-    moveRight() {
-        this.currentIdx++;
-        if(this.currentIdx >= this.words.length - 1) {
-            this.currentIdx = this.words.length - 1;
+    moveRight() {  
+        if(this.currentIdx < this.words.length - 1) {
+            this.currentIdx++;
+            this.updateCurrentWord();
+            this.getMoreWords();
         }
-        this.updateCurrentWord();
     }
 
     @HostListener('document:keydown.ArrowLeft', ['$event'])
     moveLeft() {
-        this.currentIdx--;
-        if(this.currentIdx < 0) {
-            this.currentIdx = 0;
+        if(this.currentIdx > 0) {
+            this.currentIdx--;
+            this.updateCurrentWord();
         }
-        this.updateCurrentWord();
     }
 
     ignoreWord(word: Word) {
@@ -56,7 +57,21 @@ export class WordsComponent {
         }
     }
 
+    getMoreWords() {
+        if(this.currentIdx >= this.words.length - 3) {
+            this.wordsService.getWords(++this.pageNumber).subscribe((words) => { 
+                this.words.push(...words);
+            });
+        }
+    }
+
     ngOnInit() {
+        this.route.paramMap
+            .subscribe((param) => { 
+                this.pageNumber = +param.get('startPoint');
+                this.currentIdx = 0;
+            });
+
         this.route.data
             .subscribe((data: { words: Word[] }) => { 
                 this.words = data.words; 
