@@ -36,12 +36,10 @@ function addToDb(words) {
     });
 }
 
-function main() {
-    prepareFile().then((words) => { 
-        addToDb(words);
-        process.exit(0);
-    });
+async function main() {
+    const words = await prepareFile();
+    addToDb(words);
+    process.exit(0);
 } 
 
 main();
-
