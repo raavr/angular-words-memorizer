@@ -24,8 +24,8 @@ export class WordsComponent {
     }
 
     @HostListener('document:keydown.ArrowRight', ['$event'])
-    moveRight() {  
-        if(this.currentIdx < this.words.length - 1) {
+    moveRight() {
+        if (this.currentIdx < this.words.length - 1) {
             this.currentIdx++;
             this.updateCurrentWord();
             this.getMoreWords();
@@ -34,7 +34,7 @@ export class WordsComponent {
 
     @HostListener('document:keydown.ArrowLeft', ['$event'])
     moveLeft() {
-        if(this.currentIdx > 0) {
+        if (this.currentIdx > 0) {
             this.currentIdx--;
             this.updateCurrentWord();
         }
@@ -43,12 +43,12 @@ export class WordsComponent {
     ignoreWord(word: Word) {
         const confirmed = window.confirm('Do you really want to ignore this word?');
 
-        if(confirmed) {
+        if (confirmed) {
             this.wordsService.ignoreWord(word.id).subscribe(() => {
                 const idx = this.words.indexOf(word);
-                if(idx !== -1) {
+                if (idx !== -1) {
                     this.words.splice(idx, 1);
-                    if(this.currentIdx === this.words.length) {
+                    if (this.currentIdx === this.words.length) {
                         this.currentIdx--;
                     }
                     this.updateCurrentWord();
@@ -58,8 +58,8 @@ export class WordsComponent {
     }
 
     getMoreWords() {
-        if(this.currentIdx >= this.words.length - 3) {
-            this.wordsService.getWords(++this.pageNumber).subscribe((words) => { 
+        if (this.currentIdx >= this.words.length - 3) {
+            this.wordsService.getWords(++this.pageNumber).subscribe((words) => {
                 this.words.push(...words);
             });
         }
@@ -67,14 +67,14 @@ export class WordsComponent {
 
     ngOnInit() {
         this.route.paramMap
-            .subscribe((param) => { 
+            .subscribe((param) => {
                 this.pageNumber = +param.get('startPoint');
                 this.currentIdx = 0;
             });
 
         this.route.data
-            .subscribe((data: { words: Word[] }) => { 
-                this.words = data.words; 
+            .subscribe((data: { words: Word[] }) => {
+                this.words = data.words;
                 this.currentWord = this.words[0];
             });
     }

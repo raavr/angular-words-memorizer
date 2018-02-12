@@ -32,14 +32,14 @@ import 'zone.js/dist/zone';
 import 'ts-helpers';
 
 if ('production' === ENV) {
-  // Production
+    // Production
 
 
 } else {
-  // Development
+    // Development
 
-  Error.stackTraceLimit = Infinity;
+    Error.stackTraceLimit = Infinity;
 
-  require('zone.js/dist/long-stack-trace-zone');
+    require('zone.js/dist/long-stack-trace-zone');
 
 }

@@ -8,18 +8,15 @@ import { KeyboardShortcutComponent } from 'app/words/keyboard-shortcut/keyboard-
 
 
 @NgModule({
-    imports: [ 
-        CommonModule,
-        WordsRoutingModule,
-    ],
-    declarations: [
-        WordsComponent,
-        WordItemComponent,
-        KeyboardShortcutComponent
-    ],
-    providers: [ 
-
-    ]
+	imports: [ 
+		CommonModule,
+		WordsRoutingModule,
+	],
+	declarations: [
+		WordsComponent,
+		WordItemComponent,
+		KeyboardShortcutComponent
+	]
 })
 export class WordsModule {
 

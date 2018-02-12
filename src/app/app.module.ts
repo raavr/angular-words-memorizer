@@ -18,27 +18,27 @@ const APP_SERVICE_PROVIDERS = [
 ];
 
 const APP_PROVIDERS = [
-  ...APP_RESOLVER_PROVIDERS,
-  ...APP_SERVICE_PROVIDERS
+    ...APP_RESOLVER_PROVIDERS,
+    ...APP_SERVICE_PROVIDERS
 ];
 
 @NgModule({
-  bootstrap: [ AppComponent ],
-  declarations: [
-    AppComponent,
-    NoContentComponent
-  ],
-  imports: [ 
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    WordsModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
-  ],
-  providers: [
-    ENV_PROVIDERS,
-    APP_PROVIDERS
-  ]
+    bootstrap: [AppComponent],
+    declarations: [
+        AppComponent,
+        NoContentComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        WordsModule,
+        RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
+    ],
+    providers: [
+        ENV_PROVIDERS,
+        APP_PROVIDERS
+    ]
 })
 export class AppModule {
 

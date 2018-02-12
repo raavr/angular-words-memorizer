@@ -14,8 +14,8 @@
  *
  */
 module.exports = {
-  link: [
-    /** <link> tags for fonts */
-    { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Lato'}
-  ]
+    link: [
+        /** <link> tags for fonts */
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Lato' }
+    ]
 };
