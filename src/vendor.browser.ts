@@ -20,6 +20,7 @@ import '@angularclass/hmr';
 // RxJS
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/takeUntil';
 
 if ('production' === ENV) {
   // Production

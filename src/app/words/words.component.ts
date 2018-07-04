@@ -3,6 +3,7 @@ import { Word } from './word/word';
 import { WordsApi } from './word/words-api';
 import { Router, ActivatedRoute } from '@angular/router';
 import { WordsService } from './words.service';
+import { Subject } from 'rxjs/Subject';
 
 @Component({
     selector: 'words',
@@ -14,6 +15,7 @@ export class WordsComponent {
     currentWord: Word;
     currentIdx = 0;
     pageNumber = 0;
+    unsub$ = new Subject<any>();
 
     constructor(private router: Router, private route: ActivatedRoute, private wordsService: WordsService) {
 
@@ -44,24 +46,28 @@ export class WordsComponent {
         const confirmed = window.confirm('Do you really want to ignore this word?');
 
         if (confirmed) {
-            this.wordsService.ignoreWord(word.id).subscribe(() => {
-                const idx = this.words.indexOf(word);
-                if (idx !== -1) {
-                    this.words.splice(idx, 1);
-                    if (this.currentIdx === this.words.length) {
-                        this.currentIdx--;
+            this.wordsService.ignoreWord(word.id)
+                .takeUntil(this.unsub$)
+                .subscribe(() => {
+                    const idx = this.words.indexOf(word);
+                    if (idx !== -1) {
+                        this.words.splice(idx, 1);
+                        if (this.currentIdx === this.words.length) {
+                            this.currentIdx--;
+                        }
+                        this.updateCurrentWord();
                     }
-                    this.updateCurrentWord();
-                }
-            });
+                });
         }
     }
 
     getMoreWords() {
         if (this.currentIdx >= this.words.length - 3) {
-            this.wordsService.getWords(++this.pageNumber).subscribe((words) => {
-                this.words.push(...words);
-            });
+            this.wordsService.getWords(++this.pageNumber)
+                .takeUntil(this.unsub$)
+                .subscribe((words) => {
+                    this.words.push(...words);
+                });
         }
     }
 
@@ -77,6 +83,11 @@ export class WordsComponent {
                 this.words = data.words;
                 this.currentWord = this.words[0];
             });
+    }
+
+    ngOnDestroy() {
+        this.unsub$.next();
+        this.unsub$.complete();
     }
 
 }
