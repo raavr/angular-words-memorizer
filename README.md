@@ -2,6 +2,9 @@
 
 A simple Angular app that helps me memorise english vocabulary.
 
+## Screenshot
+![Screenshot 1][1]
+
 This app is built with:
 
 ### Client
@@ -17,8 +20,5 @@ This app is built with:
 
 Environment configuration by [@AngularClass](https://github.com/AngularClass/angular2-webpack-starter)
 
-Screenshots
------------
-![Screenshot 1][1]
 
 [1]: ./screenshots/screenshot.jpg
