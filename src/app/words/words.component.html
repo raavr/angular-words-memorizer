@@ -1,9 +1,9 @@
 <div *ngIf="currentWord && currentIdx > 0" class="nav nav--left" (click)="moveLeft()">
-    <i class="fa fa-angle-left" aria-hidden="true"></i>
+  <i class="fa fa-angle-left" aria-hidden="true"></i>
 </div>
 <word-item *ngIf="currentWord" [word]="currentWord" (ignore)="ignoreWord($event)"></word-item>
 <div *ngIf="!currentWord" class="no-words">Sorry, list of words is empty!</div>
 <div *ngIf="currentWord && currentIdx !== words.length - 1" class="nav nav--right" (click)="moveRight()">
-    <i class="fa fa-angle-right" aria-hidden="true"></i>
+  <i class="fa fa-angle-right" aria-hidden="true"></i>
 </div>
 <keyboard-shortcut></keyboard-shortcut>

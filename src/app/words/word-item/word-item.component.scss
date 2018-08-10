@@ -1,50 +1,49 @@
 :host {
-    margin: 0 50px;
+  margin: 0 50px;
 }
 
 .word {
-    font-size: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding: 13px 50px;
-    border-bottom: 1px solid #E6E6E6;
-    width: 400px;
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 13px 50px;
+  border-bottom: 1px solid #E6E6E6;
+  width: 400px;
+  
+  &__translation {
+    font-weight: 700px;
+    text-align: center;
+  }
 
-    &__translation {
-        font-weight: 700px;
-        text-align: center;
-        
-    }
-    
-    &__original {
-        font-size: 2rem;
-        padding: 13px 10px;
-        text-align: center;
-        word-break: normal;
-    }
+  &__original {
+    font-size: 2rem;
+    padding: 13px 10px;
+    text-align: center;
+    word-break: normal;
+  }
 }
 
 .action-btn {
-    position: absolute;
-    top: -10px;
-    font-size: 2.5rem;
-    border-radius: 50%;
-    background-color: #eeeeee;
-    width: 45px;
-    height: 45px;
-    border: 0;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  top: -10px;
+  font-size: 2.5rem;
+  border-radius: 50%;
+  background-color: #eeeeee;
+  width: 45px;
+  height: 45px;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    &__show-ans {
-        right: -10px;
-    }
-
-    &__ignore {
-        left: -10px;
-    }
+  &__show-ans {
+    right: -10px;
+  }
+  
+  &__ignore {
+    left: -10px;
+  }
 }

@@ -1,24 +1,24 @@
 :host {
-    position: relative;
+  position: relative;
 }
 
 .nav {
-    padding: 50px;
-    font-size: 6.8rem;
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    width: 125px;
+  padding: 50px;
+  font-size: 6.8rem;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  width: 125px;
 
-    &--right {
-        right: -175px;
-    }
+  &--right {
+    right: -175px;
+  }
 
-    &--left {
-        left: -175px;
-    }
+  &--left {
+    left: -175px;
+  }
 }
 
 .no-words {
-    font-size: 3.5rem;
+  font-size: 3.5rem;
 }
