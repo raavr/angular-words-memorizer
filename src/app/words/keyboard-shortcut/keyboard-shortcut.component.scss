@@ -56,7 +56,9 @@
   padding: 8px 15px;
   transition: background-color .2s;
   border-radius: 6px;
-  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.2) inset, 0 -1px 0 0 rgba(0, 0, 0, 0.05) inset;
+  box-shadow: 
+    0 1px 0 0 rgba(255, 255, 255, 0.2) inset, 
+    0 -1px 0 0 rgba(0, 0, 0, 0.05) inset;
   margin: 0 10px 0 0;
   border-width: 3px;
   border-color: #f3f3f3 #e6e6e6 #aaaaaa #e6e6e6;

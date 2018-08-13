@@ -3,15 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
-
 import { ENV_PROVIDERS } from './environment';
 import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { NoContentComponent } from './no-content';
-
 import { WordsModule } from './words';
-
 
 const APP_SERVICE_PROVIDERS = [
 
@@ -33,7 +30,10 @@ const APP_PROVIDERS = [
     FormsModule,
     HttpModule,
     WordsModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(ROUTES, { 
+      useHash: true, 
+      preloadingStrategy: PreloadAllModules 
+    })
   ],
   providers: [
     ENV_PROVIDERS,
@@ -43,4 +43,3 @@ const APP_PROVIDERS = [
 export class AppModule {
 
 }
-

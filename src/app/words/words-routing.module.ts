@@ -7,18 +7,37 @@ import { WordsResolver } from './words.resolver';
 @NgModule({
   imports: [
     RouterModule.forChild([
-      { path: '', redirectTo: 'words', pathMatch: 'full' },
+      { 
+        path: '', 
+        redirectTo: 'words', 
+        pathMatch: 'full' 
+      },
       {
         path: 'words',
         children: [
-          { path: '', component: WordsComponent, resolve: { words: WordsResolver } },
-          { path: ':startPoint', component: WordsComponent, resolve: { words: WordsResolver } }
+          { 
+            path: '', 
+            component: WordsComponent, 
+            resolve: { 
+              words: WordsResolver 
+            } 
+          },
+          { 
+            path: ':startPoint', 
+            component: WordsComponent, 
+            resolve: { 
+              words: WordsResolver 
+            } 
+          }
         ]
       }
     ])
   ],
   exports: [RouterModule],
-  providers: [WordsService, WordsResolver]
+  providers: [
+    WordsService, 
+    WordsResolver
+  ]
 })
 export class WordsRoutingModule {
 

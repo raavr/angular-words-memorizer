@@ -1,4 +1,10 @@
-import { Component, Input, HostListener, Output, EventEmitter } from '@angular/core';
+import { 
+  Component, 
+  Input, 
+  HostListener, 
+  Output, 
+  EventEmitter 
+} from '@angular/core';
 import { Word } from '../word/word';
 import { WordsService } from 'app/words/words.service';
 

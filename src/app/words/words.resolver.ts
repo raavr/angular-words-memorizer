@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {
-  Router, Resolve, RouterStateSnapshot,
+  Router, 
+  Resolve, 
+  RouterStateSnapshot,
   ActivatedRouteSnapshot
 } from '@angular/router';
 
@@ -10,6 +12,7 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class WordsResolver implements Resolve<any> {
+  
   constructor(private wordsService: WordsService, private router: Router) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Word[]> {

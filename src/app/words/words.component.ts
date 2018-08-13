@@ -17,8 +17,12 @@ export class WordsComponent {
   pageNumber = 0;
   unsub$ = new Subject<any>();
 
-  constructor(private router: Router, private route: ActivatedRoute, private wordsService: WordsService) {
-
+  constructor(
+    private router: Router, 
+    private route: ActivatedRoute, 
+    private wordsService: WordsService
+  ) { 
+    
   }
 
   private updateCurrentWord() {
