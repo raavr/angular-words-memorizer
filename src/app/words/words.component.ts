@@ -52,17 +52,26 @@ export class WordsComponent {
     if (confirmed) {
       this.wordsService.ignoreWord(word.id)
         .takeUntil(this.unsub$)
-        .subscribe(() => {
-          const idx = this.words.indexOf(word);
-          if (idx !== -1) {
-            this.words.splice(idx, 1);
-            if (this.currentIdx === this.words.length) {
-              this.currentIdx--;
-            }
-            this.updateCurrentWord();
-          }
-        });
+        .subscribe(() => this.onWordIgnored(word));
     }
+  }
+
+  private isLastWord() {
+    this.currentIdx === this.words.length
+  }
+
+  private onWordIgnored(word: Word) {
+    const idx = this.words.indexOf(word);
+    if (idx === -1) {
+      return;
+    }  
+    
+    this.words.splice(idx, 1);
+    if (this.isLastWord()) {
+      this.currentIdx--;
+    }
+
+    this.updateCurrentWord();
   }
 
   getMoreWords() {
