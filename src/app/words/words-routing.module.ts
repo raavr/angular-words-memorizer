@@ -33,9 +33,10 @@ import { WordsResolver } from './words.resolver';
       }
     ])
   ],
-  exports: [RouterModule],
+  exports: [
+    RouterModule
+  ],
   providers: [
-    WordsService, 
     WordsResolver
   ]
 })
