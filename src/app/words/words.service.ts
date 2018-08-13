@@ -16,7 +16,7 @@ export class WordsService {
   }
 
   ignoreWord(wordId): Observable<number> {
-    return this.http.put(`${ENDPOINT}/api/word/`, { wordId })
+    return this.http.put(`${ENDPOINT}/api/words/`, { wordId })
       .map(response => response.status);
   }
 }

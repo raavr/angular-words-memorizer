@@ -40,7 +40,7 @@ app.get('/api/words', async (req, res) => {
 });
 
 const queryIgnoreUpdateWord = 'update words w set w.ignore = 1 where w.id = ?'
-app.put('/api/word/', (req, res) => {
+app.put('/api/words/', (req, res) => {
   connection.query(queryIgnoreUpdateWord, [req.body.wordId], (err, rows, fields) => {
     if (err) throw err;
     res.sendStatus(200);
