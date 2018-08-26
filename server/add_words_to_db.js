@@ -39,7 +39,6 @@ function addToDb(words) {
 async function main() {
   const words = await prepareFile();
   addToDb(words);
-  process.exit(0);
 }
 
 main();
